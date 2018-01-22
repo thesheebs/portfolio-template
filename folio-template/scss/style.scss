@@ -1,0 +1,94 @@
+$font-stack: 'Raleway', sans-serif;
+$text-color: #333;
+$text-light: #fafafa;
+$bg-services: red;
+
+// Horizontal gradient, from left to right
+@mixin linearGradient($left, $right){
+    background: $left; /* Old browsers */
+    background: -moz-linear-gradient(left,  $left 0%, $right 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left left, left right, color-stop(0%,$left), color-stop(100%,$right)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  $left 0%,$right 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  $left 0%,$right 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  $left 0%,$right 100%); /* IE10+ */
+    background: linear-gradient(to right,  $left 0%,$right 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+}
+  // Vertical gradient, from top to bottom
+  @mixin verticalGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, top top, top bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+// @include verticalGradient(#f9f9f9 ,#ffffff);
+
+body {
+  font: 100% $font-stack;
+  color: $text-color;
+}
+
+body, html {
+  height: 100%;
+}
+
+section {
+  padding: 10rem 0;
+}
+
+p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  margin-top: 100px;
+}
+
+.masthead {
+  min-height: 40rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%),url(images/pencils.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Services Sectoin
+#services {
+  @include verticalGradient(#03A9F4, #00BCD4);
+  color: $text-light;
+}
+
+#more {
+  background: url(images/pencils2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+//Footer Section
+footer {
+  background-color: #333;
+  padding: 2rem 0;
+  color: $text-light;
+  text-align: center;
+  i {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding-top: 8px;
+  }
+}
